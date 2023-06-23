@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import useMediaQuery from './hooks/useMediaQuery';
 import { Navbar } from './components/Navbar';
+import { DotMenu } from './components/DotMenu';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -28,6 +29,15 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+
+      <div className="w-5/6 mx-aut md:h-full ">
+        {isAboveSmallScreens && (
+          <DotMenu
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        )}
+      </div>
     </div>
   );
 }
