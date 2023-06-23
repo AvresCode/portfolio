@@ -9,7 +9,7 @@ module.exports = {
         red: '#DC4492',
         yellow: '#FDCC49',
         grey: '#ededed',
-        'dark-grey': '#757575',
+        'dark-grey': '#a3a2a2',
         'opaque-black': 'rgba(0,0,0,0.35)',
       },
       backgroundImage: (theme) => ({
