@@ -17,16 +17,18 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
   );
 };
 
-export const Navbar = ({ selectedPage, setSelectedPage }) => {
+export const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isAboveSmallScreens = useMediaQuery('(min-width: 768px)');
+  const navbarBackround = isTopOfPage ? '' : 'bg-orange-600';
+
   return (
-    <nav className={`z-40 w-full fixed top-0 py-6`}>
+    <nav className={`${navbarBackround} z-40 w-full fixed top-0 py-6`}>
       <div className="flex items-center justify-between mx-auto w-5/6">
         <h4 className="font-playfair text-3xl font-bold">SERVA</h4>
 
         {/* DESKTOP NAV */}
-        {isDesktop ? (
+        {isAboveSmallScreens ? (
           <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
             <Link
               page="Home"
@@ -59,7 +61,7 @@ export const Navbar = ({ selectedPage, setSelectedPage }) => {
         )}
 
         {/* MOBILE MENU POPUP */}
-        {!isDesktop && isMenuToggled && (
+        {!isAboveSmallScreens && isMenuToggled && (
           <div className="fixed right-0 bottom-0 h-full bg-slate-400 w-[300px]">
             {/* CLOSE ICON */}
             <div className="flex justify-end p-12">
