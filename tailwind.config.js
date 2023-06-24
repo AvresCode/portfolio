@@ -23,6 +23,10 @@ module.exports = {
         playfair: ['Playfair Display', 'serif'],
         opensans: ['Open Sans', 'sans-serif'],
       },
+      content: {
+        colorful: "url('./assets/color.png')",
+        brush: "url('./assets/brush.png')",
+      },
     },
     screens: {
       xs: '480px',
