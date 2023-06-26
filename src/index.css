@@ -12,3 +12,8 @@ body,
   background-color: #010026;
   @apply text-white;
 }
+
+a > svg {
+  margin-right: 1rem;
+  font-size: 1.7rem;
+}

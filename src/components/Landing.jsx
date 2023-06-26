@@ -1,6 +1,7 @@
 import useMediaQuery from '../hooks/useMediaQuery';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { motion } from 'framer-motion';
+import { SocialLinks } from './SocialLinks';
 
 export const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
@@ -96,6 +97,19 @@ export const Landing = ({ setSelectedPage }) => {
               Let's talk!
             </div>
           </AnchorLink>
+        </motion.div>
+        <motion.div
+          className="flex mt-5 justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.7, duration: 1 }}
+          variants={{
+            hidden: { opacity: 0, x: -70 },
+            visible: { opacity: 1, x: 20 },
+          }}
+        >
+          <SocialLinks />
         </motion.div>
       </div>
     </section>
