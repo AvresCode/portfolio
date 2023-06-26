@@ -11,7 +11,7 @@ export const Landing = ({ setSelectedPage }) => {
       className="md:flex md:justify-center md:items-center md:h-full gap-14 py-10"
     >
       {/* IMAGE SECTION */}
-      <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-3">
+      <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-30">
         {isAboveMediumScreens ? (
           <motion.div
             initial="hidden"
@@ -44,7 +44,7 @@ export const Landing = ({ setSelectedPage }) => {
         )}
       </div>
       {/* TEXT SECTION */}
-      <div className="z-30 basis-2/5 mt-12 md:mt-32">
+      <div className="z-30 basis-2/5 mt-12 md:mt-32 text-center">
         {/* HEADINGS */}
         <motion.div
           initial="hidden"
@@ -56,7 +56,7 @@ export const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 20 },
           }}
         >
-          <p className="text-4xl font-playfair z-10 text-center md:text-start">
+          <p className="text-4xl font-playfair z-10 text-center ">
             Serveh {''}
             <span
               className="xs:relative xs:font-semibold z-20 sm:before:content-colorful
@@ -70,6 +70,32 @@ export const Landing = ({ setSelectedPage }) => {
             Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
             viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
           </p>
+        </motion.div>
+        {/* CALL TO ACTION */}
+        <motion.div
+          className="flex justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.3, duration: 1 }}
+          variants={{
+            hidden: { opacity: 0, x: -70 },
+            visible: { opacity: 1, x: 20 },
+          }}
+          whileHover={{
+            scale: 1.1,
+            transition: { duration: 0.7 },
+          }}
+        >
+          <AnchorLink
+            className="rounded-md bg-gradient-rainblue p-1 "
+            onClick={() => setSelectedPage('contact')}
+            href="#contact"
+          >
+            <div className="bg-deep-blue hover:text-amber-300 transition duration-500 w-full h-full py-3 px-10 font-playfair">
+              Let's talk!
+            </div>
+          </AnchorLink>
         </motion.div>
       </div>
     </section>
