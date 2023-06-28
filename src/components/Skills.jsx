@@ -1,17 +1,28 @@
-import useMediaQuery from '../hooks/useMediaQuery';
-import { motion } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+// import { useInView } from 'react-intersection-observer';
 
 export const Skills = () => {
-  //   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
+  const ref = useRef(null);
+  const inView = useInView(ref);
+  const mainControl = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      console.log(inView);
+      mainControl.start('visible');
+    } else {
+      mainControl.start('hidden');
+    }
+  }, [mainControl, inView]);
 
   return (
     <section id="skills" className="my-10 p-20  md:h-full">
-      {/* HEADER & IMAGE */}
-
       <motion.div
-        className="flex flex-col items-center gap-20 md:flex-row md:justify-between py-20 px-10 "
+        ref={ref}
+        className="flex flex-col items-center gap-20 md:flex-row md:justify-between py-10 px-10 "
         initial="hidden"
-        whileInView="visible"
+        animate={mainControl}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 1 }}
         variants={{
@@ -26,12 +37,19 @@ export const Skills = () => {
           className="z-10 w-full max-w-[350px] md:max-w-[470px] rounded-lg "
         />
       </motion.div>
-      <div className="bg-slate-600 py-16 px-10 flex gap-6 justify-center flex-wrap">
+      <div
+        ref={ref}
+        className="bg-slate-600 py-16 px-10 flex gap-6 justify-center flex-wrap"
+      >
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.5 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          initial="hidden"
+          animate={mainControl}
           transition={{
-            duration: 0.8,
+            duration: 1.5,
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
@@ -46,10 +64,14 @@ export const Skills = () => {
           HTML
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.5 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          initial="hidden"
+          animate={mainControl}
           transition={{
-            duration: 0.8,
+            duration: 1.5,
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
@@ -64,10 +86,14 @@ export const Skills = () => {
           CSS
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.5 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          initial="hidden"
+          animate={mainControl}
           transition={{
-            duration: 0.8,
+            duration: 1.5,
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
@@ -82,65 +108,42 @@ export const Skills = () => {
           JavaScript
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 1,
-            ease: [0, 0.71, 0.2, 1.01],
-            scale: {
-              type: 'spring',
-              damping: 5,
-              stiffness: 100,
-              restDelta: 0.001,
-            },
+          initial="hidden"
+          animate={mainControl}
+          transition={{ duration: 1, delay: 1 }}
+          variants={{
+            hidden: { opacity: 0, x: 120 },
+            visible: { opacity: 1, x: 10 },
           }}
           className="font-playfair text-l font-bold border-2 rounded-full w-24 h-24 bg-slate-300 text-black  pt-7  text-center"
         >
           React
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 1,
-            ease: [0, 0.71, 0.2, 1.01],
-            scale: {
-              type: 'spring',
-              damping: 5,
-              stiffness: 100,
-              restDelta: 0.001,
-            },
+          initial="hidden"
+          animate={mainControl}
+          transition={{ duration: 1, delay: 1.2 }}
+          variants={{
+            hidden: { opacity: 0, x: 120 },
+            visible: { opacity: 1, x: 10 },
           }}
           className="font-playfair text-l font-bold border-2 rounded-full w-24 h-24 bg-slate-300 text-black  pt-7 text-center"
         >
           Redux
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 1,
-            ease: [0, 0.71, 0.2, 1.01],
-            scale: {
-              type: 'spring',
-              damping: 5,
-              stiffness: 100,
-              restDelta: 0.001,
-            },
+          initial="hidden"
+          animate={mainControl}
+          transition={{ duration: 1, delay: 1.4 }}
+          variants={{
+            hidden: { opacity: 0, x: 120 },
+            visible: { opacity: 1, x: 10 },
           }}
           className="font-playfair text-l font-bold border-2 rounded-full w-24 h-24 bg-slate-300 text-black  pt-7  text-center"
         >
           Node
         </motion.div>
       </div>
-      {/* <img
-        alt="skills"
-        src="assets/css-icon.jpg"
-        className="z-10 w-full max-w-[70px] "
-      /> */}
     </section>
   );
 };
