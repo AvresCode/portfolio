@@ -12,10 +12,10 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
+      if (window.scrollY <= 90) {
         SetIsTopOfPage(true);
-      }
-      if (window.screenY !== 0) {
+        console.log('scrolls', isTopOfPage);
+      } else {
         SetIsTopOfPage(false);
       }
     };
