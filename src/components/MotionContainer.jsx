@@ -6,6 +6,7 @@ export const MotionContainer = ({
   variants,
   transition,
   children,
+  ...rest
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref);
@@ -28,6 +29,7 @@ export const MotionContainer = ({
       animate={mainControl}
       variants={variants}
       transition={transition}
+      {...rest}
     >
       {children}
     </motion.div>

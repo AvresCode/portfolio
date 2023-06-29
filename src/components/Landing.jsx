@@ -2,9 +2,15 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { motion } from 'framer-motion';
 import { SocialLinks } from './SocialLinks';
+import { MotionContainer } from './MotionContainer';
 
 export const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
+
+  const textVariant = {
+    hidden: { opacity: 0, x: -70 },
+    visible: { opacity: 1, x: 20 },
+  };
 
   return (
     <section
@@ -14,10 +20,7 @@ export const Landing = ({ setSelectedPage }) => {
       {/* IMAGE SECTION */}
       <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-30">
         {isAboveMediumScreens ? (
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+          <MotionContainer
             transition={{ duration: 1 }}
             variants={{
               hidden: { opacity: 0, y: -100 },
@@ -34,7 +37,7 @@ export const Landing = ({ setSelectedPage }) => {
               className="hover:filter hover:contrast-150 transition duration-500 z-10 w-full 
               max-w-[280px] md:max-w-[350px] rounded-t-[400px]"
             />
-          </motion.div>
+          </MotionContainer>
         ) : (
           <img
             alt="me"
@@ -47,15 +50,10 @@ export const Landing = ({ setSelectedPage }) => {
       {/* TEXT SECTION */}
       <div className="z-30 basis-2/5 mt-12 md:mt-32 text-center">
         {/* HEADINGS */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+        <MotionContainer
+          // className=""
+          variants={textVariant}
           transition={{ duration: 1 }}
-          variants={{
-            hidden: { opacity: 0, x: -70 },
-            visible: { opacity: 1, x: 20 },
-          }}
         >
           <p className="text-4xl font-playfair z-10 text-center ">
             Serveh {''}
@@ -71,18 +69,12 @@ export const Landing = ({ setSelectedPage }) => {
             Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
             viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
           </p>
-        </motion.div>
+        </MotionContainer>
         {/* CALL TO ACTION */}
-        <motion.div
+        <MotionContainer
           className="flex justify-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.3, duration: 1 }}
-          variants={{
-            hidden: { opacity: 0, x: -70 },
-            visible: { opacity: 1, x: 20 },
-          }}
+          variants={textVariant}
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.7 },
@@ -97,20 +89,14 @@ export const Landing = ({ setSelectedPage }) => {
               Let's talk!
             </div>
           </AnchorLink>
-        </motion.div>
-        <motion.div
+        </MotionContainer>
+        <MotionContainer
           className="flex mt-5 justify-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          variants={textVariant}
           transition={{ delay: 0.7, duration: 1 }}
-          variants={{
-            hidden: { opacity: 0, x: -70 },
-            visible: { opacity: 1, x: 20 },
-          }}
         >
           <SocialLinks />
-        </motion.div>
+        </MotionContainer>
       </div>
     </section>
   );

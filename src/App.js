@@ -14,7 +14,6 @@ function App() {
     const handleScroll = () => {
       if (window.scrollY <= 90) {
         SetIsTopOfPage(true);
-        console.log('scrolls', isTopOfPage);
       } else {
         SetIsTopOfPage(false);
       }
