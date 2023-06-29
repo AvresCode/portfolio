@@ -41,11 +41,11 @@ export const Skills = () => {
         variants={headerVariant}
         transition={{ duration: 1 }}
       >
-        <p className="text-4xl font-playfair  text-center "> Tech Skills </p>
+        <p className="text-4xl font-playfair text-center "> Tech Skills </p>
         <img
           alt="skills"
           src="assets/codingb.jpg"
-          className="z-10 w-full max-w-[350px] md:max-w-[470px] rounded-lg "
+          className="z-10 w-full max-w-[370px] lg:max-w-[450px] rounded-lg "
         />
       </MotionContainer>
       <div className="bg-slate-600 py-16 px-10 flex gap-6 justify-center flex-wrap">

@@ -11,6 +11,7 @@ function App() {
   const isAboveSmallScreens = useMediaQuery('(min-width: 1060px)');
 
   useEffect(() => {
+    console.log(window.innerWidth);
     const handleScroll = () => {
       if (window.scrollY <= 90) {
         SetIsTopOfPage(true);
