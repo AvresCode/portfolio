@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { DotMenu } from './components/DotMenu';
 import { Landing } from './components/Landing';
 import { Skills } from './components/Skills';
+import { Contact } from './components/Contact';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -41,6 +42,7 @@ function App() {
         )}
         <Landing setSelectedPage={setSelectedPage} />
         <Skills />
+        <Contact />
       </div>
     </div>
   );

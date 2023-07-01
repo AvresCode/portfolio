@@ -35,9 +35,9 @@ export const Skills = () => {
     'font-playfair  font-bold border-2 rounded-full w-20 h-20 ss:w-24 ss:h-24 bg-slate-300 text-black  pt-7 text-center';
 
   return (
-    <section id="skills" className="my-10 py-20 px-10 md:h-full bg-orange-100">
+    <section id="skills" className="my-10 py-20 px-10 md:h-full">
       <MotionContainer
-        className="flex flex-col items-center gap-20 md:flex-row md:justify-between py-10 px-10 "
+        className="flex flex-col items-center gap-20 md:flex-row md:justify-around py-10 px-10 "
         variants={headerVariant}
         transition={{ duration: 1 }}
       >
@@ -48,7 +48,7 @@ export const Skills = () => {
           className="z-10 w-full max-w-[370px] lg:max-w-[450px] min-w-[300px] rounded-lg "
         />
       </MotionContainer>
-      <div className="bg-slate-600 py-16 xs:px-10 px-3 flex gap-6 justify-center flex-wrap   sm:w-[550px] mx-auto text-sm">
+      <div className=" py-16 xs:px-10 px-3 flex gap-6 justify-center flex-wrap   sm:w-[550px] mx-auto text-sm">
         <MotionContainer
           children="HTML"
           className={skillsStyle}
