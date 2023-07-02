@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { Map } from './Map';
 
 export const Contact = () => {
   const {
@@ -36,7 +36,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className=" md:flex my-10 py-32 px-10 md:h-full bg-slate-700"
+      className=" md:flex justify-between my-10 py-32 px-10 md:h-full bg-slate-700"
     >
       <div className="basic-1/2 p-2 bg-zinc-600">
         <h1 className="text-4xl p-5 font-playfair">Contact Me</h1>
@@ -100,7 +100,9 @@ export const Contact = () => {
           <button type="submit"> Send</button>
         </form>
       </div>
-      <div className="basic-1/2"> map</div>
+      <div>
+        <Map />
+      </div>
     </section>
   );
 };
