@@ -1,15 +1,12 @@
 import { useForm } from 'react-hook-form';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { Map } from './Map';
 
 export const Contact = () => {
   const {
     register,
-    formState,
     trigger,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm();
 
   const onSubmit = async (e) => {
@@ -36,7 +33,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className=" md:flex justify-between my-10 py-32 px-10 md:h-full bg-slate-700"
+      className=" md:flex justify-between md:my-32 py-32 px-10 md:h-full bg-slate-700"
     >
       <div className="basic-1/2 p-2 bg-zinc-600">
         <h1 className="text-4xl p-5 font-playfair">Contact Me</h1>

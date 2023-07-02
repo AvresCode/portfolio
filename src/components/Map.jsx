@@ -13,8 +13,7 @@ export const Map = () => {
   const myPosition = [52.0610398, 4.3053148];
   return (
     <MapContainer
-      className="h-[400px] w-full md:w-[580px] items-center rounded-xl "
-      //   style={{ height: '300px', width: '100%' }}
+      className=" z-0 h-[400px] w-full md:w-[580px] items-center rounded-xl "
       center={myPosition}
       zoom={13}
     >
@@ -24,7 +23,8 @@ export const Map = () => {
       />
       <Marker position={myPosition}>
         <Popup>
-          <p className="text-l font-playfair"> Find me here! </p>
+          <p className="text-l font-playfair font-bold"> Find me here!😀</p>
+
           <a
             target="_blank"
             rel="noreferrer"
