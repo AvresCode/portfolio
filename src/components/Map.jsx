@@ -10,7 +10,7 @@ L.Icon.Default.mergeOptions({
 });
 
 export const Map = () => {
-  const myPosition = [52.0623013678065, 4.314696500970514];
+  const myPosition = [52.0610398, 4.3053148];
   return (
     <MapContainer
       className="h-[400px] w-full md:w-[580px] items-center rounded-xl "
@@ -24,7 +24,15 @@ export const Map = () => {
       />
       <Marker position={myPosition}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          <p className="text-l font-playfair"> Find me here! </p>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="text-xl font-playfair"
+            href="https://www.google.com/maps/dir//Calandplein+75,+Den+Haag/@52.0610398,4.3053148,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47c5b6dd00e09b57:0xc0d6ec1fb4d3da73!2m2!1d4.3147058!2d52.062049?entry=ttu"
+          >
+            Direction
+          </a>
         </Popup>
       </Marker>
     </MapContainer>
