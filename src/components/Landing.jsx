@@ -65,8 +65,10 @@ export const Landing = ({ setSelectedPage }) => {
           </p>
 
           <p className="mt-12 mb-10  text-center font-opensans md:text-start">
-            Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
-            viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
+            I'm a career changer turned self-taught junior full-stack developer.
+            I enjoy creating visually stunning websites and have a strong
+            passion for learning. Motivated and driven, I constantly strive to
+            enhance my skills and stay updated with the latest technologies.
           </p>
         </MotionContainer>
         {/* CALL TO ACTION */}
