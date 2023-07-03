@@ -13,7 +13,7 @@ export const Map = () => {
   const myPosition = [52.0610398, 4.3053148];
   return (
     <MapContainer
-      className=" z-0 h-[400px] w-full md:w-[580px] items-center rounded-xl "
+      className=" z-0 h-[400px] w-[90%] lg:w-[550px] items-center rounded-xl mx-auto"
       center={myPosition}
       zoom={13}
     >

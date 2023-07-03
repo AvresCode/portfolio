@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-// import { motion } from 'framer-motion';
+import { MotionContainer } from './MotionContainer';
 import { Map } from './Map';
 
 export const Contact = () => {
@@ -33,12 +33,12 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className=" md:flex justify-between md:my-32 py-32 px-10 md:h-full bg-slate-700"
+      className=" lg:flex gap-3 justify-between md:my-32 py-32 px-5 md:h-full"
     >
-      <div className="basic-1/2 p-2 bg-zinc-600">
+      <div className="lg:min-w-[350px] max-w-[550px] h-[400px] mx-auto p-2 mb-8 bg-slate-600 rounded-lg ">
         <h1 className="text-4xl p-5 font-playfair">Contact Me</h1>
         <form
-          className="text-black flex flex-col gap-2"
+          className="text-black flex justify-center  flex-col gap-2"
           onSubmit={onSubmit}
           // target="_blank"
           action="https://formsubmit.co/64028c3f488ace2d11097b65eb3c823f"
@@ -94,7 +94,13 @@ export const Contact = () => {
                 'Max length is 2000 char.'}
             </p>
           )}
-          <button type="submit"> Send</button>
+          <button
+            type="submit"
+            className=" font-playfair bg-slate-300 w-1/3 rounded-full p-2 mx-auto my-3"
+          >
+            {' '}
+            Send
+          </button>
         </form>
       </div>
       <div>

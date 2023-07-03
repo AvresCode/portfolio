@@ -10,11 +10,11 @@ export const Landing = ({ setSelectedPage }) => {
     hidden: { opacity: 0, x: -70 },
     visible: { opacity: 1, x: 20 },
   };
-
+  console.log('width', window.innerWidth);
   return (
     <section
       id="home"
-      className="md:flex md:justify-center md:items-center md:h-full gap-14 pt-10"
+      className="md:flex md:justify-center md:items-center md:h-full gap-14 pt-10 my-10"
     >
       {/* IMAGE SECTION */}
       <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-30">
@@ -42,7 +42,7 @@ export const Landing = ({ setSelectedPage }) => {
             alt="me"
             src="assets/foto3.jpg"
             className="hover:filter hover:saturate-200 transition duration-700 z-10 w-full 
-            max-w-[300px] md:max-w-[400px] rounded-t-[200px]"
+            max-w-[300px] md:max-w-[400px] rounded-t-[200px] my-10"
           />
         )}
       </div>
