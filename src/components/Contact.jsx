@@ -18,24 +18,21 @@ export const Contact = () => {
     if (!isValid) {
       e.preventDefault();
     }
-
-    // reset();
   };
-
-  // useEffect(() => {
-  //   if (formState.isSubmitSuccessful) {
-  //     console.log('isSubmitSuccessful',isSubmitSuccessful)
-  //     reset({ name: '', email: '', subject: '', message: '' });
-  //     console.log('formState', formState);
-  //   }
-  // }, [formState, reset]);
 
   return (
     <section
       id="contact"
       className=" lg:flex gap-3 justify-between md:my-32 py-32 px-5 md:h-full"
     >
-      <div className="lg:min-w-[350px] max-w-[550px] h-[400px] mx-auto p-2 mb-8 bg-slate-600 rounded-lg ">
+      <MotionContainer
+        transition={{ duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, x: -70 },
+          visible: { opacity: 1, x: 20 },
+        }}
+        className="lg:min-w-[350px] max-w-[550px] h-[400px] mx-auto p-2 mb-8 bg-slate-600 rounded-lg "
+      >
         <h1 className="text-4xl p-5 font-playfair">Contact Me</h1>
         <form
           className="text-black flex justify-center  flex-col gap-2"
@@ -102,10 +99,16 @@ export const Contact = () => {
             Send
           </button>
         </form>
-      </div>
-      <div>
+      </MotionContainer>
+      <MotionContainer
+        transition={{ dely: 0.5, duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, y: -100 },
+          visible: { opacity: 1, y: 0 },
+        }}
+      >
         <Map />
-      </div>
+      </MotionContainer>
     </section>
   );
 };
